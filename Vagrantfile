@@ -19,3 +19,9 @@ Vagrant.configure("2") do |config|
 
     config.vm.synced_folder "./", "/vagrant", id: "vagrant-root", :nfs => true
 end
+
+# sudo add-apt-repository ppa:webupd8team/java
+# sudo apt-get update
+# sudo apt-get install oracle-java8-installer
+# sudo apt-get install oracle-java8-set-default
+# sudo apt-get install ant
