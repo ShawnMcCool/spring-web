@@ -1,0 +1,16 @@
+---
+- hosts: all
+  sudo: true
+  vars:
+    root_folder: /vagrant
+    document_root: "{{ root_folder }}/public"
+    dbuser: root
+    dbpasswd: password
+    writeable_dirs:
+      - app/storage/cache
+  tasks:
+    - include: tasks/common.yml
+    - include: tasks/development.yml
+  handlers:
+    - name: restart mysql
+      service: name=mysql state=restarted
